@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+/* Core theme variables (light) */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* convenience aliases */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* fonts (replace with your font variables if you have them) */
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: "Courier New", monospace;
+}
+
+/* Inline theme block (keeps same shape as your example) */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Base page styles */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+/* Utilities converted to plain CSS (no @apply) */
+.wrapper {
+  max-width: 80rem; /* approximate of max-w-7xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.25rem; /* p-5 */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* md:px-10 -> add horizontal padding on medium+ screens */
+@media (min-width: 768px) {
+  .wrapper {
+    padding-left: 2.5rem; /* px-10 */
+    padding-right: 2.5rem;
+  }
+}
+
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Headings */
+.h1-bold {
+  font-weight: 700;
+  font-size: 1.875rem; /* 3xl ~ 1.875rem */
+  line-height: 1.2;
+}
+@media (min-width: 1024px) {
+  /* lg */
+  .h1-bold {
+    font-size: 2.25rem;
+  } /* 4xl ~ 2.25rem */
+}
+
+.h2-bold {
+  font-weight: 700;
+  font-size: 1.5rem; /* 2xl ~ 1.5rem */
+  line-height: 1.2;
+}
+@media (min-width: 1024px) {
+  .h2-bold {
+    font-size: 1.875rem;
+  } /* 3xl */
+}
+
+.h3-bold {
+  font-weight: 700;
+  font-size: 1.25rem; /* xl ~ 1.25rem */
+  line-height: 1.2;
+}
+@media (min-width: 1024px) {
+  .h3-bold {
+    font-size: 1.5rem;
+  } /* 2xl */
+}
