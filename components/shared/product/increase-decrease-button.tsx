@@ -24,10 +24,9 @@ const IncreaseDecreaseButton = ({
       onClick={() =>
         startTransition(async () => {
           const res = await updateItemQuantity();
-          if (res) {
-            if (!res.success) {
-              toast.error(res.message, {});
-            }
+
+          if (res && !res.success) {
+            toast.error(res.message, {});
           }
         })
       }
